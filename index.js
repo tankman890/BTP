@@ -23,7 +23,7 @@ app.put('/revoke_access/:rfid', (req, res) => {
     res.end();
 });
 
-app.get('/get_list', (req, res) => {
+app.get('/', (req, res) => {
     const file = require(fileName);
     res.json(JSON.stringify(file));
 });
