@@ -3,14 +3,14 @@ import time
 import check_id
 import predict
 
-#import RPi.GPIO as GPIO
-#from mfrc522 import SimpleMFRC522
+import RPi.GPIO as GPIO
+from mfrc522 import SimpleMFRC522
 
-#reader = SimpleMFRC522()
+reader = SimpleMFRC522()
 
 while True:
-	#id, text = reader.read()
-	id = input('Scan the card: ')
+	id, text = reader.read()
+	#id = input('Scan the card: ')
 	if check_id.check_local(id):
 		print('Access Granted!')
 
@@ -25,4 +25,4 @@ while True:
 		print("Access Denied!")
 	time.sleep(1)
 	
-#GPIO.cleanup()
+GPIO.cleanup()
