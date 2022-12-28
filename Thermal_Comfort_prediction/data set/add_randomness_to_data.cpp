@@ -8,7 +8,7 @@ int main() {
     ifstream f;
 
     f.open("data_without_randomness.csv");
-    newfile.open("data_with_randomness.csv");
+    newfile.open("custom_94.csv");
 
     string line;
 
@@ -28,7 +28,7 @@ int main() {
             while (!ss.eof()) {
                 getline(ss, word, ',');if(i == 4) {
                     //if(word.back() == '\n') word.pop_back();
-                    int pred = stoi(word) + (rand() % 5 - 2);
+                    int pred = stoi(word) + 2 + (rand() % 5 - 2);
                     word = to_string(pred) + '\n';
                 } else {
                     word += ',';
